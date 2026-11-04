@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mt5-connectors"
+version = "1.0.0"
+description = "MT5 execution + resilient market-data connectors (hybrid fallback)"
+license = {text = "MIT"}
+authors = [{name = "Roger David Fernandez Pineda", email = "hn.maje.504.hn@gmail.com"}]
+requires-python = ">=3.9"
+dependencies = ["pandas>=2.0", "numpy>=1.24", "httpx>=0.25"]
+
+[project.optional-dependencies]
+yfinance = ["yfinance>=0.2.40"]
+mt5 = ["MetaTrader5>=5.0.45; sys_platform == 'win32'"]
+dev = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["mt5_connectors"]
